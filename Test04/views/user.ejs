@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css" />
+  <title>Users</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-blue-600 text-white p-4">
+    <nav class="container mx-auto">
+      <%- include('partials/header', { page: '/viewData' }) %>
+    </nav>
+  </header>
+
+  <main class="container mx-auto my-8 p-6 bg-white shadow-lg rounded-lg">
+    <h1 class="text-2xl font-semibold text-center mb-6">Users List</h1>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-300 text-center">
+        <thead class="bg-blue-500 text-white">
+          <tr>
+            <th class="py-2 px-4 border-b">User ID</th>
+            <th class="py-2 px-4 border-b">Username</th>
+            <th class="py-2 px-4 border-b">First Name</th>
+            <th class="py-2 px-4 border-b">Last Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(user => { %>
+            <tr class="hover:bg-gray-100">
+              <td class="py-2 px-4 border-b"><%= user.userId %></td>
+              <td class="py-2 px-4 border-b"><%= user.username %></td>
+              <td class="py-2 px-4 border-b"><%= user.fName %></td>
+              <td class="py-2 px-4 border-b"><%= user.lName %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

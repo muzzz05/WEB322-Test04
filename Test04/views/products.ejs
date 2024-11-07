@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css" />
+  <title>Products</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-blue-600 text-white p-4">
+    <nav class="container mx-auto">
+      <%- include('partials/header', { page: '/viewData' }) %>
+    </nav>
+  </header>
+
+  <main class="container mx-auto my-8 p-6 bg-white shadow-lg rounded-lg">
+    <h1 class="text-2xl font-semibold text-center mb-6">Products List</h1>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-300 text-center">
+        <thead class="bg-blue-500 text-white">
+          <tr>
+            <th class="py-2 px-4 border-b">Product ID</th>
+            <th class="py-2 px-4 border-b">Product Name</th>
+            <th class="py-2 px-4 border-b">Expiry Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% products.forEach(product => { %>
+            <tr class="hover:bg-gray-100">
+              <td class="py-2 px-4 border-b"><%= product.PID %></td>
+              <td class="py-2 px-4 border-b"><%= product.pName %></td>
+              <td class="py-2 px-4 border-b"><%= product.pExpiry %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

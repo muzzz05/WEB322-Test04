@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css" />
+  <title>Available Routes</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-blue-600 text-white p-4">
+    <%- include('partials/header', { page: '/viewData' }) %>
+  </header>
+
+  <main class="container mx-auto my-8 p-6 bg-white shadow-lg rounded-lg text-center">
+    <h1 class="text-3xl font-bold mb-6">All Available Routes</h1>
+    <ul class="space-y-4">
+      <li>
+        <a href="/user" class="text-blue-600 hover:text-blue-800 underline">View Users</a>
+      </li>
+      <li>
+        <a href="/products" class="text-blue-600 hover:text-blue-800 underline">View Products</a>
+      </li>
+      <li>
+        <a href="/greaterThan3" class="text-blue-600 hover:text-blue-800 underline">All Products with PID Greater than 3</a>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>
